@@ -170,21 +170,8 @@ export const IFrameHelper = {
     createBubbleHolder();
 	
 	console.log('DEBUG TIM');
-	document.getElementById("chatwoot_live_chat_widget").onclick = function(event) { 
-		alert("click");
-		if (event.target.localName == 'a') {
-			alert('a_target');
-			if (event.target.href.split('.')[0] == 'https://postback') {
-				alert('postback target');
-				payload = event.target.href.split('.')[1].replace('/','').replace('\\','')
-				sender_id = event.target.href.split('.')[2].replace('/','').replace('\\','')
-				var xmlHttp = new XMLHttpRequest();
-				xmlHttp.open( "GET", "https://escapade-6t98.herokuapp.com/postback?payload=" + payload + "&sender_id=" + sender_id, true ); // false for synchronous request
-				xmlHttp.send( null );
-				event.preventDefault();
-			}
-		}
-	};
+	console.log(document.getElementById("chatwoot_live_chat_widget"));
+	document.getElementById("chatwoot_live_chat_widget").addEventListener("click", function() {alert("ok")}, false);
 
     if (!window.$chatwoot.hideMessageBubble) {
       const chatIcon = createBubbleIcon({
