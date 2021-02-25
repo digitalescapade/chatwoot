@@ -39,7 +39,7 @@ class Messages::MessageBuilder
   end
 
   def sender
-    message_type == 'outgoing' ? @user : @conversation.contact
+    message_type == 'outgoing' ? @user : @user
   end
 
   def message_params
