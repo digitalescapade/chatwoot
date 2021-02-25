@@ -35,8 +35,12 @@ export default {
   },
   methods: {
     onClick(payload) {
-	  console.log('onclick');
-      alert(payload);
+		callback = payload.split('.')[0]
+		sender_id = payload.split('.')[1]
+		escapade_code = payload.split('.')[2]
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open( "GET", "https://escapade-" + escapade_code + ".herokuapp.com/postback?payload=" + payload + "&sender_id=" + sender_id, true ); // false for synchronous request
+		xmlHttp.send( null );
     },
   },
 };
