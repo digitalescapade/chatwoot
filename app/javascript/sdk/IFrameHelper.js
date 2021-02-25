@@ -170,8 +170,6 @@ export const IFrameHelper = {
     createBubbleHolder();
 	
 	console.log('DEBUG TIM');
-	console.log(document.getElementById("chatwoot_live_chat_widget").contentWindow);
-	document.getElementById("chatwoot_live_chat_widget").contentWindow.addEventListener("click", function() {alert("ok")}, false);
 
     if (!window.$chatwoot.hideMessageBubble) {
       const chatIcon = createBubbleIcon({
