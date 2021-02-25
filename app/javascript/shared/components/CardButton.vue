@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     onClick() {
-      // Do postback here
+      alert('click_postback');
     },
   },
 };
