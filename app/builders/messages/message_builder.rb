@@ -53,7 +53,8 @@ class Messages::MessageBuilder
       content_type: @params[:content_type],
       items: @items,
       in_reply_to: @in_reply_to,
-      echo_id: @params[:echo_id]
+      echo_id: @params[:echo_id],
+	  source_id: 'bot'
     }
   end
 end

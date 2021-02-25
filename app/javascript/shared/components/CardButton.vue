@@ -13,7 +13,7 @@
     v-else
     :key="action.payload"
     class="action-button button"
-    @click="onClick(action.payload)"
+    @click="onClick(action.payload, action.text)"
   >
     {{ action.text }}
   </button>
@@ -34,12 +34,13 @@ export default {
     },
   },
   methods: {
-    onClick(payload) {
-		var callback = payload.split('.')[0]
-		var sender_id = payload.split('.')[1]
-		var escapade_code = payload.split('.')[2]
+    onClick(payload, text) {
+		var callback = payload.split('.')[0];
+		var sender_id = payload.split('.')[1];
+		var escapade_code = payload.split('.')[2];
+		var title = encodeURI(text);
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open( "GET", "https://escapade-" + escapade_code + ".herokuapp.com/postback?payload=" + callback + "&sender_id=" + sender_id, true ); // false for synchronous request
+		xmlHttp.open( "GET", "https://escapade-" + escapade_code + ".herokuapp.com/postback?payload=" + callback + "&sender_id=" + sender_id + "&title=" + title, true ); // false for synchronous request
 		xmlHttp.send( null );
     },
   },
