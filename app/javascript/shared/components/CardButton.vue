@@ -13,10 +13,9 @@
     v-else
     :key="action.payload"
     class="action-button button"
-    @click="onClick"
-	v-on:click=alert('hello')
+    @click="onClick(action.payload)"
   >
-    {{ action.text }} + "goo"
+    {{ action.text }}
   </button>
 </template>
 
@@ -35,8 +34,9 @@ export default {
     },
   },
   methods: {
-    onClick() {
-      alert('click_postback');
+    onClick(payload) {
+	  console.log('onclick');
+      alert(payload);
     },
   },
 };
