@@ -168,8 +168,6 @@ export const IFrameHelper = {
 
     loadCSS();
     createBubbleHolder();
-	
-	console.log('DEBUG TIM');
 
     if (!window.$chatwoot.hideMessageBubble) {
       const chatIcon = createBubbleIcon({
