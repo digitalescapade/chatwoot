@@ -14,8 +14,9 @@
     :key="action.payload"
     class="action-button button"
     @click="onClick"
+	v-on:click=alert('hello')
   >
-    {{ action.text }}
+    {{ action.text }} + "goo"
   </button>
 </template>
 
